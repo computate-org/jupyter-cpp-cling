@@ -6,6 +6,8 @@ MAINTAINER Christopher Tate <computate@computate.org>
 USER root
 
 RUN yum install -y root-cling gcc-c++ clang cmake conda xtensor-devel mlpack-bin mlpack-devel armadillo armadillo-devel gsl-devel hdf5-devel boost-devel
+RUN pip install jupyterlab-s3-browser
+RUN jupyter serverextension enable --py jupyterlab_s3_browser
 RUN conda create --prefix /opt/app-root -y \
   && conda install --prefix /opt/app-root -c conda-forge xeus-cling -y \
   && conda install --prefix /opt/app-root -c conda-forge xtensor-blas -y
