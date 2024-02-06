@@ -1,11 +1,21 @@
 FROM quay.io/opendatahub-contrib/workbench-images:jupyter-datascience-c9s-py311_2023c_latest
 
-MAINTAINER Christopher Tate <computate@computate.org>
-
-
 USER root
 
-RUN yum install -y root-cling gcc-c++ clang cmake conda xtensor-devel mlpack-bin mlpack-devel armadillo armadillo-devel gsl-devel hdf5-devel boost-devel
+RUN yum install -y \
+  root-cling \
+  gcc-c++ \
+  clang \
+  cmake \
+  conda \
+  xtensor-devel \
+  mlpack-bin \
+  mlpack-devel \
+  armadillo \
+  armadillo-devel \
+  gsl-devel \
+  hdf5-devel \
+  boost-devel
 RUN pip install jupyterlab-s3-browser
 RUN jupyter serverextension enable --py jupyterlab_s3_browser
 RUN conda create --prefix /opt/app-root -y \
