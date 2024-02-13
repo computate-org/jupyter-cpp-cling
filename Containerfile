@@ -16,10 +16,8 @@ RUN yum install -y \
   gsl-devel \
   hdf5-devel \
   boost-devel
-RUN pip install jupyterlab-s3-browser
-RUN jupyter serverextension enable --py jupyterlab_s3_browser
 RUN conda create --prefix /opt/app-root -y \
-  && conda install --prefix /opt/app-root -c conda-forge xeus-cling xtensor-blas -y \
+  && conda install --prefix /opt/app-root -c conda-forge xeus-cling xtensor-blas -y
 RUN sed -i -e 's/\/\//\//g' /opt/app-root/share/jupyter/kernels/xcpp*/kernel.json
 RUN jupyter kernelspec install /opt/app-root/share/jupyter/kernels/xcpp11 \
   && jupyter kernelspec install /opt/app-root/share/jupyter/kernels/xcpp14 \
