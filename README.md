@@ -33,5 +33,5 @@ Base image: [quay.io/opendatahub-contrib/workbench-images:jupyter-datascience-c9
 You can pull the latest [jupyter-cpp-cling container image](https://github.com/nerc-images/jupyter-cpp-cling/pkgs/container/jupyter-cpp-cling) below:
 
 ```
-podman pull ghcr.io/nerc-images/jupyter-cpp-cling:main
+podman pull quay.io/nerc-images/jupyter-cpp-cling:latest
 ```
